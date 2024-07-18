@@ -1,4 +1,4 @@
-package com.authentication.config;
+package com.authentication.server.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.Customizer;
