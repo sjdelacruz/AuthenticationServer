@@ -1,0 +1,31 @@
+server:
+  port: 9000
+
+uri:
+  context-path: /api
+  resource-version: /v1
+  domain: /sjdelacruz
+  subdomain: /authentication-server
+  endpoints:
+    base-path: ${uri.context-path}${uri.resource-version}${uri.domain}${uri.subdomain}
+    users: 
+      profile: /profile
+
+spring:
+  resources:
+    add-mappings: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+  jpa:
+    show-sql: true
+  datasource:
+    mysql: 
+      url: jdbc:mysql://localhost:3306/usuarios
+      username: root
+      password: sjcm1993
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    postgresql:
+      url: jdbc:postgresql://localhost:5432/Muebleria
+      username: adminMuebleria
+      password: sjcm1993
+      driver-class-name: org.postgresql.Driver
