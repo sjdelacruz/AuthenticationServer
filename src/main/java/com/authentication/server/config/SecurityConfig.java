@@ -32,7 +32,7 @@ public class SecurityConfig {
 	// Configuring HttpSecurity
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.csrf().disable().authorizeHttpRequests().requestMatchers("/auth/welcome").permitAll().and()
+		return http.csrf().disable().authorizeHttpRequests().requestMatchers("/api/v1/sjdelacruz/authentication-server/welcome", "/usuarios", "/muebles").permitAll().and()
 				.authorizeHttpRequests().requestMatchers("/auth/user/**").authenticated().and().authorizeHttpRequests()
 				.requestMatchers("/auth/admin/**").authenticated().and().formLogin().and().build();
 	}
